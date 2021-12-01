@@ -1,3 +1,5 @@
+from output import Output
+
 def Bauble_sort(array):
     count_if = 0
     count_change_main = 0
@@ -16,4 +18,4 @@ def Bauble_sort(array):
                 changes = True
             count_if += 1
 
-    return {'comparsion': int(count_if), 'change in main array': int(count_change_main), 'change in temporary array': int(count_change_temp)}
+    Output(count_if, count_change_main, count_change_temp)

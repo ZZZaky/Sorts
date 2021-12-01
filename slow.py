@@ -1,5 +1,5 @@
 from random import randint
-
+from output import Output
 
 def Slow_sort(array):
     count_if = 0
@@ -18,8 +18,8 @@ def Slow_sort(array):
             break
         else: 
             for i in range(len(array) - 1):
-                rand = randint(0, len(array) - 1)
+                rand = randint(i, len(array) - 1)
                 array[i], array[rand] = array[rand], array[i]
                 count_change_main += 2
     
-    return {'comparsion': int(count_if), 'change in main array': int(count_change_main), 'change in temporary array': int(count_change_temp)}
+    Output(count_if, count_change_main, count_change_temp)

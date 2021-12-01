@@ -1,3 +1,6 @@
+from output import Output
+
+
 count_if = 0
 count_change_main = 0
 count_change_temp = 0
@@ -57,4 +60,4 @@ def Tree_sort(array):
     result = []
     tree_to_array(root, result)
 
-    return {'comparsion': int(count_if), 'change in main array': int(count_change_main), 'change in temporary array': int(count_change_temp)}
+    Output(count_if, count_change_main, count_change_temp)
