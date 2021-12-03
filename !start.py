@@ -1,34 +1,39 @@
 from random import randint
-from colorama import init, Fore, Back, Style
+from colorama import init, Fore, Back
 from colorama.initialise import reset_all
 init()
 
 def Bauble(array):
     from bauble import Bauble_sort
-    return Bauble_sort(array)
+    Bauble_sort(array)
 
 def Tree(array):
     from tree import Tree_sort
-    return Tree_sort(array)
+    Tree_sort(array)
 
 def Slow(array):
     from slow import Slow_sort
-    return Slow_sort(array)
+    Slow_sort(array)
 
 def Selection_min(array):
     from selection_min import Selection_min_sort
-    return Selection_min_sort(array)
+    Selection_min_sort(array)
 
 def Selection_max(array):
     from selection_max import Selection_max_sort
-    return Selection_max_sort(array)
+    Selection_max_sort(array)
 
 def Insertion(array):
     from insertion import Insertion_sort
-    return Insertion_sort(array)
+    Insertion_sort(array)
 
-sorts = {'1': 'Bauble', '2': 'Tree', '3': 'Selection on minimum', '4': 'Selection on maximum' , '5': 'Slow', '6': 'Insertion'}
-sorts_import = {'Bauble': Bauble, 'Tree': Tree, 'Slow': Slow, 'Selection on minimum': Selection_min, 'Selection on maximum' : Selection_max, 'Insertion': Insertion}
+def Gnome(array):
+    from gnome import Gnome_sort
+    Gnome_sort(array)
+
+
+sorts = {'1': 'Bauble', '2': 'Tree', '3': 'Selection on minimum', '4': 'Selection on maximum' , '5': 'Slow', '6': 'Insertion', '7': 'Gnome'}
+sorts_import = {'Bauble': Bauble, 'Tree': Tree, 'Slow': Slow, 'Selection on minimum': Selection_min, 'Selection on maximum' : Selection_max, 'Insertion': Insertion, 'Gnome': Gnome}
 
 
 
@@ -42,7 +47,7 @@ while True:
     else: method = False
 
     if method:
-        size = int(input(f'{Fore.WHITE}Set the size of array:'))
+        size = int(input(f'{Fore.WHITE}Set the size of array: '))
 
         print(f'Initializing {Fore.RED}%s{Fore.WHITE} method on array with a size of {Fore.RED}%s{Fore.WHITE}...' % (method, size))
 
@@ -53,4 +58,5 @@ while True:
 
 
         sorts_import[method](arr)
+        # print(arr)
         print('\n')
